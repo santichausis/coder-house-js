@@ -21,7 +21,7 @@ while (frutas != 'FIN') {
 
 // Ciclo Switch
 
-let color = prompt("Ingresa tu club favorito de fútbol")
+let color = prompt("Ingresa tu club favorito de fútbol ⚽️")
 switch (color) {
   case 'Boca':
     alert("¡Sos hincha del mejor club del mundo!")
