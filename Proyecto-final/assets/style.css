@@ -8,17 +8,20 @@ h1 {
     text-align: center;
 }
 section {
-    max-width: 900px;
+    max-width: 920px;
     margin: auto;
 }
-.productContainer {
+#header {
+    text-align: center;
+}
+#arrayLibros {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
-    max-width: 900px;
     margin: auto;
 }
-.cardsProduct {
-
+.cardLibro {
+    width: 250px;
 }
 .cardImage {
     width: 200px;
