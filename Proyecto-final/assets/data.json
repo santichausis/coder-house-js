@@ -8,7 +8,7 @@
     "portada": "portada1.jpg",
     "precio": 1500,
     "stock": 20,
-    "genero": "Aventura"
+    "genero": "Misterio, Ficción"
   },
   {
     "id": 2,
@@ -19,7 +19,7 @@
     "portada": "portada2.jpg",
     "precio": 2185,
     "stock": 95,
-    "genero": "Aventura"
+    "genero": "Horror, Ficción"
   },
   {
     "id": 3,
@@ -30,7 +30,7 @@
     "portada": "portada3.jpg",
     "precio": 1800,
     "stock": 55,
-    "genero": "Aventura"
+    "genero": "Biografia"
   },
   {
     "id": 4,
@@ -41,7 +41,7 @@
     "portada": "portada4.jpg",
     "precio": 1900,
     "stock": 15,
-    "genero": "Aventura"
+    "genero": "Biografia"
   },
   {
     "id": 5,
@@ -63,6 +63,28 @@
     "portada": "portada6.jpg",
     "precio": 1760,
     "stock": 20,
-    "genero": "Aventura"
+    "genero": "Misterio, Horror"
+  },
+  {
+    "id": 7,
+    "nombre": "La chica de nieve",
+    "autor": "Javier Castillo",
+    "año": 2020,
+    "editorial": "SUMA",
+    "portada": "portada7.jpg",
+    "precio": 1780,
+    "stock": 20,
+    "genero": "Suspenso, Ficcón"
+  },
+  {
+    "id": 8,
+    "nombre": "Terra Alta",
+    "autor": "Javier Cercas",
+    "año": 2019,
+    "editorial": "Planeta",
+    "portada": "portada8.jpg",
+    "precio": 1100,
+    "stock": 8,
+    "genero": "Thriller, Misterio"
   }
 ]
