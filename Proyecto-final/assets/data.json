@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "nombre": "Todos somos villanos",
+    "autor": "M.L.RIO",
+    "año": 2017,
+    "editorial": "Penguin",
+    "portada": "portada1.jpg",
+    "precio": 1500,
+    "stock": 20,
+    "genero": "Aventura"
+  },
+  {
+    "id": 2,
+    "nombre": "Agujas doradas",
+    "autor": "Michael McDowell",
+    "año": 2021,
+    "editorial": "La bestia equilatera",
+    "portada": "portada2.jpg",
+    "precio": 2185,
+    "stock": 95,
+    "genero": "Aventura"
+  },
+  {
+    "id": 3,
+    "nombre": "A prueba de fuego",
+    "autor": "Javier Moro",
+    "año": 2020,
+    "editorial": "Espasa",
+    "portada": "portada3.jpg",
+    "precio": 1800,
+    "stock": 55,
+    "genero": "Aventura"
+  },
+  {
+    "id": 4,
+    "nombre": "Una educación",
+    "autor": "Tara Westover",
+    "año": 2018,
+    "editorial": "Lumen",
+    "portada": "portada4.jpg",
+    "precio": 1900,
+    "stock": 15,
+    "genero": "Aventura"
+  },
+  {
+    "id": 5,
+    "nombre": "La chica salvaje",
+    "autor": "Delia Owens",
+    "año": 2019,
+    "editorial": "Vintage Espanol",
+    "portada": "portada5.jpg",
+    "precio": 1340,
+    "stock": 5,
+    "genero": "Aventura"
+  },
+  {
+    "id": 6,
+    "nombre": "El instituto",
+    "autor": "Stephen King",
+    "año": 2019,
+    "editorial": "Plaza & Jánes",
+    "portada": "portada6.jpg",
+    "precio": 1760,
+    "stock": 20,
+    "genero": "Aventura"
+  }
+]
