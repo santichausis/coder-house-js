@@ -5,17 +5,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto Final - Santiago Chausis</title>
+    <title>Bookcy - Santiago Chausis</title>
     <meta name="description" content="Un ecommerce para encargar todo lo que necesitas para tu jardín">
     <link rel="stylesheet" href="./assets/style.css">
+    <link rel="icon" href="./assets/images/bookcy-favicon.png" type="image/x-icon">
 </head>
 
 <body>
     <section id='header'>
-        <h1>Tu tienda de libros</h1>
-        <p>Descripción de la tienda de libros</p>
+        <div class="sectionHeader">
+            <img class="logoHeader" src="./assets/images/bookcy-logo-white.png" alt="Bookcy tu tienda de libros">
+        </div>
     </section>
-    <section id='arrayLibros'></section>
+    <section class="sectionBooks">
+        <h3 class="mainTitle">Lanzamientos</h3>
+        <div id='cards'></div>
+    </section>
+    <script src="./assets/data.json"></script>
     <script src="app.js"></script>
 </body>
 
