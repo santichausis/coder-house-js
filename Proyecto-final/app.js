@@ -1,57 +1,71 @@
+let bookJson = './assets/data.json';
 // Llamar al archivo json
-async function getBooks() {
-  let url = './assets/data.json';
-  let res = await fetch(url);
-  return await res.json();
-}
+const getBooks = async () => {
+  const resp = await fetch(bookJson);
+  const respData = await resp.json();
+  return respData;
+};
 
 // Función para gestionar el json
-async function renderBooks() {
+const renderBooks = async () => {
   let books = await getBooks();
+
   // Recorrer array
   for (const book of books) {
+    const { portada, nombre, autor, precio } = book;
+    // Crear variables
     let div = document.createElement('div');
     div.classList.add('cardBook');
-    div.innerHTML = `<img class='cardImage' src='./assets/images/portadas/${book.portada}'/>
-                    <h2 class='cardTitle'>${book.nombre}</h2>
-                    <h3 class='cardAuthor'>${book.autor}</h3>
-                    <p class='cardPublisher'>${book.editorial}</p>
-                    <p class='cardPrice' id='cardPrice'>$${book.precio}</p>
-                    <button class='addButton'>¡Lo quiero!</button>`;
+    let cardImage = document.createElement('img');
+    cardImage.src = `./assets/images/portadas/${portada}`;
+    cardImage.alt = `${nombre}`;
+    let cardTitle = document.createElement('h2');
+    cardTitle.textContent = `${nombre}`;
+    let cardAuthor = document.createElement('h3');
+    cardAuthor.textContent = `${autor}`;
+    let cardPrice = document.createElement('p');
+    cardPrice.textContent = `$${applyDesc(precio)}`;
+    let addButton = document.createElement('button');
+    addButton.setAttribute('id', 'addBook');
+    addButton.textContent = `Lo quiero`;
+
     document.getElementById('cards').appendChild(div);
+    div.appendChild(cardImage);
+    div.appendChild(cardTitle);
+    div.appendChild(cardAuthor);
+    div.appendChild(cardPrice);
+    div.appendChild(addButton);
   }
+
+  // Ordenar array por precio
+  books.sort((a, b) => {
+    if (a.precio > b.precio) {
+      return 1;
+    } else {
+      return -1;
+    }
+  });
+
   // Almacenar de forma local
   localStorage.setItem('books', JSON.stringify(books));
-  // Console table para ver el archivo JSON
-  console.table(books);
-}
+
+  // Validar precio y aplicar descuento
+  function applyDesc(precio) {
+    if (precio > 2000) {
+      return precio * 0.8;
+    } else if (precio > 1500) {
+      return precio * 0.85;
+    } else if (precio > 1000) {
+      return precio * 0.9;
+    }
+  }
+
+  let addBook = document.getElementById('addBook');
+  addBook.onclick = function () {
+    alert('Comprado!');
+  };
+
+  addBook.map(console.log('gato'))
+};
+
 renderBooks();
-
-//   // Validar precio y aplicar descuento
-//   function aplicarDescuento() {
-//     if (libro.precio > 2000) {
-//       document
-//         .getElementById('cardPrice')
-//         .replaceWith(`¡20% OFF! $${libro.precio * 0.8}`);
-
-//     } else if (libro.precio > 1500) {
-//       document
-//         .getElementById('cardPrice')
-//         .replaceWith(`¡15% OFF! $${libro.precio * 0.85}`);
-//     } else if (libro.precio > 1000) {
-//       document
-//         .getElementById('cardPrice')
-//         .replaceWith(`¡10% OFF! $${libro.precio * 0.9}`);
-//     }
-//   }
-//   aplicarDescuento();
-// }
-
-// // Ordenar array
-// libros.sort(function (a, b) {
-//   if (a.nombre > b.nombre) {
-//     return 1;
-//   } else {
-//     return -1;
-//   }
-// });
