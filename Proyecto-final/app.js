@@ -17,15 +17,20 @@ const renderBooks = async () => {
     let div = document.createElement('div');
     div.classList.add('cardBook');
     let cardImage = document.createElement('img');
+    cardImage.classList.add('cardImage');
     cardImage.src = `./assets/images/portadas/${portada}`;
     cardImage.alt = `${nombre}`;
     let cardTitle = document.createElement('h2');
+    cardTitle.classList.add('cardTitle');
     cardTitle.textContent = `${nombre}`;
     let cardAuthor = document.createElement('h3');
+    cardAuthor.classList.add('cardAuthor');
     cardAuthor.textContent = `${autor}`;
     let cardPrice = document.createElement('p');
+    cardPrice.classList.add('cardPrice');
     cardPrice.textContent = `$${applyDesc(precio)}`;
     let addButton = document.createElement('button');
+    addButton.classList.add('addButton');
     addButton.setAttribute('id', 'addBook');
     addButton.textContent = `Lo quiero`;
 
