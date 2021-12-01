@@ -8,7 +8,7 @@
     "portada": "portada1.jpg",
     "precio": 1500,
     "stock": 20,
-    "genero": "Misterio, Ficción"
+    "genero": "Ficción"
   },
   {
     "id": 2,
@@ -19,7 +19,7 @@
     "portada": "portada2.jpg",
     "precio": 2185,
     "stock": 95,
-    "genero": "Horror, Ficción"
+    "genero": "Ficción"
   },
   {
     "id": 3,
@@ -63,7 +63,7 @@
     "portada": "portada6.jpg",
     "precio": 1760,
     "stock": 20,
-    "genero": "Misterio, Horror"
+    "genero": "Horror"
   },
   {
     "id": 7,
@@ -74,7 +74,7 @@
     "portada": "portada7.jpg",
     "precio": 1780,
     "stock": 20,
-    "genero": "Suspenso, Ficcón"
+    "genero": "Suspenso"
   },
   {
     "id": 8,
@@ -85,6 +85,6 @@
     "portada": "portada8.jpg",
     "precio": 1100,
     "stock": 8,
-    "genero": "Thriller, Misterio"
+    "genero": "Misterio"
   }
 ]
