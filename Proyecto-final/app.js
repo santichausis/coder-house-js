@@ -13,33 +13,16 @@ const renderBooks = async () => {
   // Recorrer array
   for (const book of books) {
     const { portada, nombre, autor, precio } = book;
-    // Crear variables
-    let div = document.createElement('div');
-    div.classList.add('cardBook');
-    let cardImage = document.createElement('img');
-    cardImage.classList.add('cardImage');
-    cardImage.src = `./assets/images/portadas/${portada}`;
-    cardImage.alt = `${nombre}`;
-    let cardTitle = document.createElement('h2');
-    cardTitle.classList.add('cardTitle');
-    cardTitle.textContent = `${nombre}`;
-    let cardAuthor = document.createElement('h3');
-    cardAuthor.classList.add('cardAuthor');
-    cardAuthor.textContent = `${autor}`;
-    let cardPrice = document.createElement('p');
-    cardPrice.classList.add('cardPrice');
-    cardPrice.textContent = `$${applyDesc(precio)}`;
-    let addButton = document.createElement('button');
-    addButton.classList.add('addButton');
-    addButton.setAttribute('id', 'addBook');
-    addButton.textContent = `Lo quiero`;
 
-    document.getElementById('cards').appendChild(div);
-    div.appendChild(cardImage);
-    div.appendChild(cardTitle);
-    div.appendChild(cardAuthor);
-    div.appendChild(cardPrice);
-    div.appendChild(addButton);
+    // Crear variables
+    $('#cards').append(`
+      <div class='cardBook'>
+      <img class='cardImage' src='./assets/images/portadas/${portada}' alt='${nombre}'></img>
+      <h2 class='cardTitle'>${nombre}</h2>
+      <h3 class='cardAuthor'>${autor}</h3>
+      <p class='cardPrice'>$${applyDesc(precio)}</p>
+      <button class='addButton' id='addBook' onclick='buyBook()'>Lo quiero</button></div>
+    `);
   }
 
   // Ordenar array por precio
@@ -53,24 +36,23 @@ const renderBooks = async () => {
 
   // Almacenar de forma local
   localStorage.setItem('books', JSON.stringify(books));
+};
+renderBooks();
 
-  // Validar precio y aplicar descuento
-  function applyDesc(precio) {
-    if (precio > 2000) {
-      return precio * 0.8;
-    } else if (precio > 1500) {
-      return precio * 0.85;
-    } else if (precio > 1000) {
-      return precio * 0.9;
-    }
+// Validar precio y aplicar descuento
+applyDesc = (precio) => {
+  if (precio > 2000) {
+    return precio * 0.8;
+  } else if (precio > 1500) {
+    return precio * 0.85;
+  } else if (precio > 1000) {
+    return precio * 0.9;
   }
-
-  let addBook = document.getElementById('addBook');
-  addBook.onclick = function () {
-    alert('Comprado!');
-  };
-
-  addBook.map(console.log('gato'))
 };
 
-renderBooks();
+// Agregar al changuito
+buyBook = () => {
+  $('.addButton').click(function () {
+    $(this).text('Comprado').attr('disabled', 'disabled').addClass('disabled');
+  });
+};
