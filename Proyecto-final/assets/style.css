@@ -83,3 +83,10 @@
   margin: 10px auto;
   cursor: pointer;
 }
+.disabled {
+  cursor: no-drop;
+  background: #fff;
+  color: var(--main-color);
+  border-color: var(--main-color);
+  font-weight: 800;
+}
