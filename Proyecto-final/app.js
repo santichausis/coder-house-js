@@ -54,6 +54,7 @@ const renderBooks = async () => {
           <h2 class='cardTitle'>${nombre}</h2>
           <h3 class='cardAuthor'>${autor}</h3>
           <p class='cardPrice'>$${applyDesc(precio)}</p>
+          <p class='sellBook'>COMPRADO</p>
           <button class='addButton' id='addBook' onclick='buyBook()'>Lo quiero</button></div>
         `);
     }
@@ -69,20 +70,24 @@ applyDesc = (precio) => {
     return precio * 0.85;
   } else if (precio > 1000) {
     return precio * 0.9;
+  } else {
+    return precio;
   }
 };
 
 // Comprar
 buyBook = () => {
   $('.addButton').click(function () {
-    $(this).text($('button', this).text() + 'Comprado');
-    $(this).fadeOut(700);
+    $(this).fadeOut(600);
+    $(this).parent('.cardBook').remove();
   });
 };
 // Ocultar y volver a mostrar
 $('.hideReleases').click(() => {
-  $('#cards').toggle(1000);
+  $('#cards').toggle(800);
+  $('.releases').toggle(800);
 });
 $('.hideFictions').click(() => {
-  $('#ficcion').toggle(1000);
+  $('#ficcion').toggle(800);
+  $('.fiction').toggle(800);
 });
