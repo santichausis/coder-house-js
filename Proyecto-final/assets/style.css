@@ -27,13 +27,28 @@
   width: 250px;
   height: auto;
 }
+.containerCategory {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  text-transform: uppercase;
+}
+.hideReleases, .hideFictions {
+  text-align: end;
+}
+.descriptionCategory {
+  margin: 10px 0;
+  grid-column-start: 1;
+  grid-column-end: 3;
+
+}
 .mainTitle {
   color: var(--main-color);
   font-size: 32px;
   letter-spacing: 1px;
   margin: 20px 0px;
 }
-#cards {
+.cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   justify-items: center;

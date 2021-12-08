@@ -14,13 +14,13 @@ const renderBooks = async () => {
   for (const book of books) {
     const { portada, nombre, autor, precio } = book;
 
-    // Crear variables
+    // Crear html
     $('#cards').append(`
       <div class='cardBook'>
       <img class='cardImage' src='./assets/images/portadas/${portada}' alt='${nombre}'></img>
       <h2 class='cardTitle'>${nombre}</h2>
       <h3 class='cardAuthor'>${autor}</h3>
-      <p class='cardPrice'>$${applyDesc(precio)}</p>
+      <p class='cardPrice'>$ ${applyDesc(precio)}</p>
       <button class='addButton' id='addBook' onclick='buyBook()'>Lo quiero</button></div>
     `);
   }
@@ -36,6 +36,28 @@ const renderBooks = async () => {
 
   // Almacenar de forma local
   localStorage.setItem('books', JSON.stringify(books));
+
+  // Filtrar ofertas
+  books.filter(({ id, precio, nombre }) => {
+    if (precio < 2000) {
+      console.table(id, nombre, precio);
+    }
+  });
+
+  // Filtrar genero
+  books.filter(({ portada, nombre, autor, precio, genero }) => {
+    if (genero === 'Ficción') {
+      // Crear html
+      $('#ficcion').append(`
+          <div class='cardBook'>
+          <img class='cardImage' src='./assets/images/portadas/${portada}' alt='${nombre}'></img>
+          <h2 class='cardTitle'>${nombre}</h2>
+          <h3 class='cardAuthor'>${autor}</h3>
+          <p class='cardPrice'>$${applyDesc(precio)}</p>
+          <button class='addButton' id='addBook' onclick='buyBook()'>Lo quiero</button></div>
+        `);
+    }
+  });
 };
 renderBooks();
 
@@ -50,9 +72,17 @@ applyDesc = (precio) => {
   }
 };
 
-// Agregar al changuito
+// Comprar
 buyBook = () => {
   $('.addButton').click(function () {
-    $(this).text('Comprado').attr('disabled', 'disabled').addClass('disabled');
+    $(this).text($('button', this).text() + 'Comprado');
+    $(this).fadeOut(700);
   });
 };
+// Ocultar y volver a mostrar
+$('.hideReleases').click(() => {
+  $('#cards').toggle(1000);
+});
+$('.hideFictions').click(() => {
+  $('#ficcion').toggle(1000);
+});
