@@ -86,5 +86,49 @@
     "precio": 1100,
     "stock": 8,
     "genero": "Misterio"
+  },
+  {
+    "id": 9,
+    "nombre": "La luna es una cruel amante",
+    "autor": "Robert A. Heinlein",
+    "año": 2011,
+    "editorial": "La Factoría de Ideas",
+    "portada": "portada9.jpg",
+    "precio": 850,
+    "stock": 10,
+    "genero": "Ficción"
+  },
+  {
+    "id": 10,
+    "nombre": "El envío",
+    "autor": "Sebastian Fitzek",
+    "año": 2018,
+    "editorial": "EDICIONES B",
+    "portada": "portada10.jpg",
+    "precio": 1280,
+    "stock": 11,
+    "genero": "Suspenso"
+  },
+  {
+    "id": 11,
+    "nombre": "Desgracia",
+    "autor": "J.M. Coetzee",
+    "año": 2005,
+    "editorial": "Mondadori Argentina",
+    "portada": "portada11.jpg",
+    "precio": 900,
+    "stock": 4,
+    "genero": "Ficción"
+  },
+  {
+    "id": 12,
+    "nombre": "La Policía de la Memoria",
+    "autor": "Yōko Ogawa",
+    "año": 2021,
+    "editorial": "Tusquets",
+    "portada": "portada12.jpg",
+    "precio": 1500,
+    "stock": 1,
+    "genero": "Ficción"
   }
 ]
