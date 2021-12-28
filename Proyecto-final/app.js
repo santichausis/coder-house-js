@@ -40,7 +40,7 @@ const renderBooks = async () => {
   // Filtrar ofertas
   books.filter(({ id, precio, nombre }) => {
     if (precio < 2000) {
-      console.table(id, nombre, precio);
+      // console.table(id, nombre, precio);
     }
   });
 
@@ -54,7 +54,6 @@ const renderBooks = async () => {
           <h2 class='cardTitle'>${nombre}</h2>
           <h3 class='cardAuthor'>${autor}</h3>
           <p class='cardPrice'>$${applyDesc(precio)}</p>
-          <p class='sellBook'>COMPRADO</p>
           <button class='addButton' id='addBook' onclick='buyBook()'>Lo quiero</button></div>
         `);
     }
